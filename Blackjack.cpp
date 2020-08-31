@@ -8,7 +8,7 @@ int main()
     cin.tie(0);
     cout.tie(0);
 
-    int n=0;
+    int n = 0;
 
     cin >> n;
     
