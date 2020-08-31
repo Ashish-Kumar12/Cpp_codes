@@ -1,5 +1,4 @@
-# CodeForcesLadder11
+This repository contains solutions to A2OJ Ladders :
 
-Solutions to A2OJ Ladder 11 
-
-Link => https://www.a2oj.com/Ladder11.html
+  1. Ladder ID 11 ( Codeforces Rating < 1300 )
+  2. Ladder ID 12 ( 1300 <= Codeforces Rating <= 1399 )
