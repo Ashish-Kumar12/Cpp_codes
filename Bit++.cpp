@@ -1,43 +1,22 @@
-#include <iostream>
-
+#include <bits/stdc++.h>
 using namespace std;
-
-int main()
+#define ll long long int
+#define fast ios_base::sync_with_stdio(false);cin.tie();cout.tie();
+ 
+ 
+int main() 
 {
-    long int n, i, x=0, flag;
-    char op[100];
-
-    cin >> n;
-
+    fast
+    int n,counter=0;
+    string s;
+    cin>>n;
     while(n--)
     {
-        cin >> op;
-        flag=0;
-        for(i=0; i<3; i++)
-        {
-            if(op[i] == '+')
-            {
-                flag = 1;
-                break;
-            }
-            else if(op[i] == '-')
-            {
-                flag = 2;
-                break;
-            }
-        }
-
-        if(flag == 1)
-        {
-            x++;
-        }
-        else if(flag == 2)
-        {
-            x--;
-        }
+        cin>>s;
+        if(s[1]=='+')
+        counter++;
+        else
+        counter--;
     }
-
-    cout << x << endl;
-
-    return 0;
+    cout<<counter;
 }
