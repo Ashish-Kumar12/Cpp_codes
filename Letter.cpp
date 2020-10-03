@@ -1,60 +1,29 @@
-#include <iostream>
-#include <map>
 
+#include <bits/stdc++.h>
 using namespace std;
-
-int main()
+ 
+int main() 
 {
-    char heading[300], text[300];
-    int lenHeading=0, lenText=0;
-    bool ans = true;
-
-    map<char, int> headingMap, textMap;
-    map<char, int>::iterator itr;
-
-    cin.getline(heading, 300);
-    cin.getline(text, 300);
-    // scanf("%[^\n]s", heading);
-    // fflush(stdin);
-    // scanf("%[^\n]s", text);
-
-    while(heading[lenHeading] != '\0')
+    string s1,s2;
+    getline(cin,s1);
+    getline(cin,s2);
+    
+    for(int i=0;i<s2.length();i++)
     {
-        if(heading[lenHeading] != ' ')
+        if(s2[i]!=' ')
         {
-            headingMap.insert({heading[lenHeading], 0});
-            headingMap[heading[lenHeading]]++;
-        }
-        lenHeading++;
-    }
-    while(text[lenText] != '\0')
-    {
-        if(text[lenText] != ' ')
-        {
-            textMap.insert({text[lenText], 0});
-            textMap[text[lenText]]++;
-        }
-        lenText++;
-    }
-
-    for(itr = textMap.begin(); itr != textMap.end(); itr++)
-    {
-        itr->second = (itr->second - headingMap[itr->first]);
-        if(itr->second > 0)
-        {
-            ans = false;
-            break;
+            int s =s1.find(s2[i]);
+            if(s==-1)
+            {
+                cout<<"NO";
+                return 0;
+            }
+            else
+            s1.erase(s1.begin()+s);
         }
     }
-
-    if(ans)
-    {
-        cout << "YES" << endl;
-    }
-    else
-    {
-        cout << "NO" << endl;
-    }
-
-    return 0;
+    cout<<"YES";
+    
+       return 0;
+ 
 }
