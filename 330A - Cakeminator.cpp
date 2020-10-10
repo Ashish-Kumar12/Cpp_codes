@@ -1,68 +1,33 @@
-#include <iostream>
-#include <cstring>
-
+#include <bits/stdc++.h>
 using namespace std;
-
-int main()
+#define ll long long int
+#define fast ios_base::sync_with_stdio(false);cin.tie();cout.tie();
+ 
+ 
+int main() 
 {
-    ios_base::sync_with_stdio(0);
-    cin.tie(0);
-    cout.tie(0);
-
-    int r=0, c=0, i=0, j=0, cnt=0;
-
-    cin >> r >> c;
-    char cake[r+2][c+2];
-    bool row[r+1], col[c+1];
-
-    memset(row, false, r*(sizeof(bool)));
-    memset(col, false, c*(sizeof(bool)));
-
-    for (i=0; i<r; i++)
-    {
-        for (j=0; j<c; j++)
-        {
-            cin >> cake[i][j];
-
-            if (cake[i][j] == 'S')
-            {
-                row[i] = true;
-                col[j] = true;
-            }
-        }
-    }
-
-    for (i=0; i<r; i++)
-    {
-        if (row[i] == false)
-        {
-            for (j=0; j<c; j++)
-            {
-                if (cake[i][j] == '.')
-                {
-                    cnt++;
-                    cake[i][j] = '-';
-                }
-            }
-        }
-    }
-
-    for (j=0; j<c; j++)
-    {
-        if (col[j] == false)
-        {
-            for (i=0; i<r; i++)
-            {
-                if (cake[i][j] == '.')
-                {
-                    cnt++;
-                    cake[i][j] = '-';
-                }
-            }
-        }
-    }
-
-    cout << cnt << "\n";
+    fast
     
-    return 0;
+    int n,m;
+    cin>>n>>m;
+    
+    set<char>s1,s2;
+    
+    char c;
+    
+    for(int i=0;i<n;i++)
+    {
+        for (int j=0;j<m;j++)
+        {
+            cin>>c;
+            if(c=='S')
+            {
+                s1.insert(i);
+                s2.insert(j);
+            }
+        }
+    }
+    
+    cout<<m*n-s1.size()*s2.size();
+    
 }
